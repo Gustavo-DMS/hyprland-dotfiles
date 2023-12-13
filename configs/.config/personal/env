@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# TODO: Pensar em fluxo para dotfiles
+export STOW_FOLDERS="bin,i3,fonts,nvim,tmux,Ubuntu,zsh,alacritty"
+export DOTFILES=$HOME/dotfiles-hyprland/dotfiles
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
